@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CCMS Créatifs - Événements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="logo-img">CCMS</div>
+      <div class="logo-text">CCMS CRÉATIFS</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="association.html">L’association</a></li>
+        <li><a href="collectif.html">Le collectif</a></li>
+        <li><a href="realisations.html">Nos réalisations</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="rejoindre.html">Nous rejoindre</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="badge">Moments partagés</div>
+  <h1>Événements & ateliers</h1>
+
+  <p>
+    Quelques instantanés de la vie de l’association : marchés, ateliers, rencontres
+    et moments de partage à <strong>Angoulême et son agglomération</strong>.
+  </p>
+  <p>Clique sur les photos pour les afficher en grand.</p>
+
+  <div style="margin-top:1rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+    <a href="realisations.html" class="btn btn-secondaire">Voir nos réalisations</a>
+    <a href="evenements.html" class="btn btn-principale">Voir les événements</a>
+  </div>
+</section>
+
+<section>
+  <h2>Galerie d’événements</h2>
+
+  <div class="realisations-grid">
+
+    <div class="card realisation">
+      <div class="card-header-line">
+        <span class="icon-chip"><span>🎄</span><span>Marché</span></span>
+        <span class="card-meta">Angoulême · Hiver</span>
+      </div>
+
+      <div class="realisation-image">
+        <img src="images/event-marche-noel.jpg"
+             alt="Marché de Noël CCMS"
+             data-caption="Marché de Noël – Stand CCMS Créatifs, décorations, lumières et échanges avec les visiteurs.">
+      </div>
+
+      <div class="badge-mini">Marché de Noël</div>
+      <h3>Ambiance marché de Noël</h3>
+      <p>
+        Une journée rythmée par les rencontres, les discussions et les découvertes autour de nos créations.
+      </p>
+    </div>
+
+    <div class="card realisation">
+      <div class="card-header-line">
+        <span class="icon-chip"><span>🖌️</span><span>Atelier</span></span>
+        <span class="card-meta">Atelier · Petit comité</span>
+      </div>
+
+      <div class="realisation-image">
+        <img src="images/event-atelier.jpg"
+             alt="Atelier créatif CCMS"
+             data-caption="Atelier créatif – Session de création en petit groupe, échanges d’idées et fabrication d’objets.">
+      </div>
+
+      <div class="badge-mini">Atelier créatif</div>
+      <h3>Atelier & fabrication</h3>
+      <p>
+        Un moment plus intimiste pour tester, expérimenter et créer ensemble autour d’une table.
+      </p>
+    </div>
+
+    <div class="card realisation">
+      <div class="card-header-line">
+        <span class="icon-chip"><span>🏷️</span><span>Événement local</span></span>
+        <span class="card-meta">Agglomération d’Angoulême</span>
+      </div>
+
+      <div class="realisation-image">
+        <img src="images/event-stand.jpg"
+             alt="Stand CCMS lors d’un événement"
+             data-caption="Stand CCMS lors d’un événement local – Présentation de nos réalisations et échanges avec le public.">
+      </div>
+
+      <div class="badge-mini">Stand & rencontres</div>
+      <h3>Stand CCMS</h3>
+      <p>
+        Installation d’un stand avec une sélection de réalisations, pour faire connaître l’association sur le terrain.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<div id="lightbox" class="lightbox-overlay">
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> CCMS Créatifs – Association loi 1901.</div>
+    <div>Événements – Angoulême et son agglomération.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".realisation-image img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "";
+        lightboxCaption.textContent = img.dataset.caption || img.alt || "";
+        lightbox.classList.add("visible");
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("visible");
+      lightboxImg.src = "";
+      lightboxCaption.textContent = "";
+    });
+  });
+</script>
+
+</body>
+</html>

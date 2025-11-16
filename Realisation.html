@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CCMS Créatifs - Nos réalisations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="logo-img">CCMS</div>
+      <div class="logo-text">CCMS CRÉATIFS</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="association.html">L’association</a></li>
+        <li><a href="collectif.html">Le collectif</a></li>
+        <li><a href="realisations.html">Nos réalisations</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="rejoindre.html">Nous rejoindre</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="badge">Créations & objets</div>
+    <h1>Nos réalisations</h1>
+
+    <p>
+      Une sélection de nos stands, objets artisanaux, coffrets et rendus 3D,
+      créés à <strong>Angoulême et son agglomération</strong>. Chaque pièce est pensée
+      comme un petit univers à part entière.
+    </p>
+    <p>Clique sur une image pour la voir en plus grand.</p>
+
+    <div style="margin-top:1rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+      <a href="realisations.html" class="btn btn-principale">Voir nos réalisations</a>
+      <a href="evenements.html" class="btn btn-secondaire">Voir les événements</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Galerie des réalisations</h2>
+
+    <div class="realisations-grid">
+
+      <div class="card realisation">
+        <div class="card-header-line">
+          <span class="icon-chip"><span>🕯️</span><span>Stands & déco</span></span>
+          <span class="card-meta">Angoulême · Marché de Noël</span>
+        </div>
+
+        <div class="realisation-image">
+          <img src="images/stand-noel.jpg"
+               alt="Stand de Noël de l'association CCMS Créatifs"
+               data-caption="Stand de Noël CCMS Créatifs – Ambiance chaleureuse avec objets faits main, déco de saison et petites pièces prêtes à offrir.">
+        </div>
+
+        <div class="badge-mini">Stand de Noël</div>
+        <h3>Stand de Noël</h3>
+        <p>
+          Mise en place d’un stand complet : déco, bougies, coffrets et éléments créés spécialement
+          pour l’événement.
+        </p>
+      </div>
+
+      <div class="card realisation">
+        <div class="card-header-line">
+          <span class="icon-chip"><span>🎁</span><span>Coffrets</span></span>
+          <span class="card-meta">Séries limitées</span>
+        </div>
+
+        <div class="realisation-image">
+          <img src="images/coffrets-ccms.jpg"
+               alt="Coffrets créatifs CCMS"
+               data-caption="Coffrets créatifs – Assemblage d’objets artisanaux autour d’un même thème, couleur ou saison.">
+        </div>
+
+        <div class="badge-mini">Coffrets artisanaux</div>
+        <h3>Coffrets créatifs</h3>
+        <p>
+          Combinaisons d’objets faits main, sélectionnés et assemblés autour d’une ambiance :
+          saison, couleur, univers visuel…
+        </p>
+      </div>
+
+      <div class="card realisation">
+        <div class="card-header-line">
+          <span class="icon-chip"><span>🧊</span><span>3D & visuels</span></span>
+          <span class="card-meta">Blender · Rendus</span>
+        </div>
+
+        <div class="realisation-image">
+          <img src="images/rendus-3d.jpg"
+               alt="Rendu 3D pour CCMS Créatifs"
+               data-caption="Rendus 3D réalisés sur Blender pour illustrer les projets de l’association, créer des affiches et supports visuels.">
+        </div>
+
+        <div class="badge-mini">Création numérique</div>
+        <h3>Rendus 3D</h3>
+        <p>
+          Scènes et objets 3D utilisés pour les affiches, la communication et certains visuels
+          de l’association.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="lightbox" class="lightbox-overlay">
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> CCMS Créatifs – Association loi 1901.</div>
+    <div>Créations artisanales – Angoulême et son agglomération.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".realisation-image img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "";
+        lightboxCaption.textContent = img.dataset.caption || img.alt || "";
+        lightbox.classList.add("visible");
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("visible");
+      lightboxImg.src = "";
+      lightboxCaption.textContent = "";
+    });
+  });
+</script>
+
+</body>
+</html>

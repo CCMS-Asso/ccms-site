@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CCMS Créatifs - Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="logo-img">CCMS</div>
+      <div class="logo-text">CCMS CRÉATIFS</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="association.html">L’association</a></li>
+        <li><a href="collectif.html">Le collectif</a></li>
+        <li><a href="realisations.html">Nos réalisations</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="rejoindre.html">Nous rejoindre</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="badge">Atelier d’objets & créations artisanales</div>
+  <h1>Bienvenue chez CCMS Créatifs</h1>
+
+  <p>
+    Une association artisanale portée par <strong>Manon, Sylvain, Cely et Claire</strong>,
+    pour transformer nos idées en objets, coffrets et petites pièces uniques.
+  </p>
+
+  <p>
+    Basés à <strong>Angoulême et son agglomération</strong>, nous participons à des événements
+    locaux, marchés, ateliers et projets créatifs de proximité.
+  </p>
+
+  <div style="margin-top:1rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+    <a href="realisations.html" class="btn btn-principale">Voir nos réalisations</a>
+    <a href="evenements.html" class="btn btn-secondaire">Voir les événements</a>
+  </div>
+</section>
+
+<section>
+  <h2>Ce que nous faisons</h2>
+
+  <div class="projets-grid">
+    <div class="card">
+      <span class="icon-chip"><span>🕯️</span><span>Stands & déco</span></span>
+      <h3 style="margin-top:0.5rem;">Stands artisanaux</h3>
+      <p>Présence sur des marchés locaux et événements de la région d’Angoulême.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon-chip"><span>🎁</span><span>Coffrets</span></span>
+      <h3 style="margin-top:0.5rem;">Coffrets créatifs</h3>
+      <p>Petits univers artisanaux assemblés autour d’un thème ou d’une ambiance.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon-chip"><span>🧊</span><span>3D & visuels</span></span>
+      <h3 style="margin-top:0.5rem;">Créations numériques</h3>
+      <p>Modélisation 3D, visuels et supports graphiques pour l’association.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> CCMS Créatifs – Association loi 1901.</div>
+    <div>Site réalisé pour l’association CCMS – Angoulême.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
