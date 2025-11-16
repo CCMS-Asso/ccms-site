@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CCMS Créatifs - Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="logo-img">CCMS</div>
+      <div class="logo-text">
+        <span class="logo-title">CCMS CRÉATIFS</span>
+        <span class="logo-subtitle">Atelier d’objets & créations artisanales</span>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="association.html">L’association</a></li>
+        <li><a href="collectif.html">Le collectif</a></li>
+        <li><a href="realisations.html">Nos réalisations</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="rejoindre.html">Nous rejoindre</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="section-header">
+      <h1>Nous contacter</h1>
+      <p>
+        Pour toute question, demande d’information ou idée de projet
+        (stand, coffret, objet, visuel…), vous pouvez nous écrire.
+      </p>
+    </div>
+
+    <div class="section-content-two-cols">
+      <div>
+        <h2>Contact rapide par mail</h2>
+        <p>
+          👉 Cliquez ici pour ouvrir votre boîte mail avec notre adresse :
+        </p>
+        <p>
+          <a href="mailto:votre.adresse@mail.fr?subject=Demande%20d%27informations%20-%20CCMS%20Cr%C3%A9atifs"
+             class="text-link">
+            Écrire à CCMS Créatifs →
+          </a>
+        </p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">
+          (Remplacez <code>votre.adresse@mail.fr</code> dans le code par
+          l’adresse officielle de l’association.)
+        </p>
+
+        <p>
+          Dans votre message, vous pouvez préciser :
+        </p>
+        <ul>
+          <li>le type de projet (stand, coffret, objet, visuel 3D…) ;</li>
+          <li>la date ou période souhaitée ;</li>
+          <li>le lieu (si événement physique) ;</li>
+          <li>votre budget approximatif, si vous en avez une idée.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Formulaire simple (optionnel)</h2>
+        <p style="font-size: 0.9rem; opacity: 0.8;">
+          Attention : ce formulaire utilise <strong>mailto:</strong>, donc il
+          ouvre le logiciel de messagerie de la personne (Outlook, Mail, etc.).
+          Sur téléphone, ça ouvre généralement l’app mail.
+        </p>
+
+        <form
+          action="mailto:votre.adresse@mail.fr"
+          method="post"
+          enctype="text/plain"
+          style="display:flex;flex-direction:column;gap:0.6rem;margin-top:0.8rem;"
+        >
+          <label>
+            Nom / Prénom<br>
+            <input type="text" name="Nom" required
+                   style="width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.2);">
+          </label>
+
+          <label>
+            Adresse mail<br>
+            <input type="email" name="Email" required
+                   style="width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.2);">
+          </label>
+
+          <label>
+            Votre message<br>
+            <textarea name="Message" rows="5" required
+                      style="width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.2);"></textarea>
+          </label>
+
+          <button type="submit" class="btn primary" style="align-self:flex-start;">
+            Envoyer via votre messagerie
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© CCMS Créatifs – Association loi 1901 – Angoulême & agglomération.</p>
+    <p class="footer-note">Site réalisé pour l’association CCMS – CCMS Créatifs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
